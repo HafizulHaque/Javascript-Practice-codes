@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Promises, Async, Await</title>
+    <script>
+      function loadScript(src, callback){
+        let script = document.createElement(`script`);
+        script.src = src;
+        script.onload = () => callback(script);
+        document.head.append(script);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Promises, Async, Await</h1>
+    <script>
+      loadScript(`js/sampleScript.js`);
+    </script>
+  </body>
+</html>

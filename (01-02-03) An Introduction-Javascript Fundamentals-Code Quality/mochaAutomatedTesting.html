@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <!-- add mocha css, to show results  -->
+    <link rel="stylesheet" href="css/mocha.css">
+    <!-- add mocha framework code  -->
+    <script src="js/mocha.js"></script>
+    <script>
+      mocha.setup('bdd');// minimal setup
+    </script>
+    <!-- add chai  -->
+    <script src="js/chai.js"></script>
+    <script>
+      //let's make chai global
+      let assert = chai.assert;
+    </script>
+  </head>
+  <body>
+    <script>
+      function pow(x, n){
+        if(n<0 || Math.round(n)!=n) return NaN;
+
+        let res = 1;
+        for(let i = 1; i <= n; i++){
+          res *= x;
+        }
+        return res;
+      };
+    </script>
+    <!-- the script with tests (describe, it) -->
+    <script src="js/test.js"></script>
+
+    <!-- contain test result  -->
+    <div id="mocha"></div>
+
+    <!-- run tests  -->
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
